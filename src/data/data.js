@@ -87,7 +87,7 @@ export const courses = [
   {
     id: 1,
     title: "Web Development: The Complete Programming Course",
-    author: "Joe Root",
+    author: "Yeabsira",
     rating: 4.8,
     reviews: 450,
     price: 124,
@@ -102,7 +102,7 @@ export const courses = [
   {
     id: 2,
     title: "AI: The Complete Artificial Intelligence Course",
-    author: "Sarah Johnson",
+    author: "Aster",
     rating: 5,
     reviews: 680,
     price: 189,
@@ -117,7 +117,7 @@ export const courses = [
   {
     id: 3,
     title: "BC: The Complete Block Chain Programming Course",
-    author: "Mike Chen",
+    author: "Muluken",
     rating: 4.8,
     reviews: 320,
     price: 154,
@@ -132,7 +132,7 @@ export const courses = [
   {
     id: 4,
     title: "Learn Python: The Complete Python Programming Course",
-    author: "Emma Davis",
+    author: "Tilahun",
     rating: 4.7,
     reviews: 890,
     price: 144,
@@ -147,7 +147,7 @@ export const courses = [
   {
     id: 5,
     title: "Design: The Complete UI/UX Design Course",
-    author: "Alex Turner",
+    author: "Tsilat",
     rating: 4.5,
     reviews: 540,
     price: 84,
@@ -162,7 +162,7 @@ export const courses = [
   {
     id: 6,
     title: "AW: The Complete Artwork Programming Course",
-    author: "Lisa Martinez",
+    author: "Amanuel",
     rating: 5,
     reviews: 290,
     price: 124,
@@ -177,7 +177,7 @@ export const courses = [
   {
     id: 7,
     title: "Digital Marketing Mastery: From Zero to Hero",
-    author: "David Brown",
+    author: "Malu",
     rating: 4.9,
     reviews: 720,
     price: 99,
@@ -192,7 +192,7 @@ export const courses = [
   {
     id: 8,
     title: "Social Media Marketing Strategy 2024",
-    author: "Rachel Green",
+    author: "Dejene",
     rating: 4.6,
     reviews: 410,
     price: 79,
@@ -207,7 +207,7 @@ export const courses = [
   {
     id: 9,
     title: "React & Next.js: Modern Web Development",
-    author: "Tom Wilson",
+    author: "Alex",
     rating: 4.9,
     reviews: 950,
     price: 159,
@@ -232,21 +232,21 @@ export const testimonials = [
   {
     id: 1,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, error culpa eos a expedita perspiciatis distinctio! Consectetur, inventore!",
-    author: "Lisa Vos",
+    author: "Alex",
     role: "Student",
     image: "/images/avatar-1.png",
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, error culpa eos a expedita perspiciatis distinctio! Consectetur, inventore!",
-    author: "Bram Vermeulen",
+    author: "Tibebu",
     role: "Student",
     image: "/images/avatar-2.png",
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, error culpa eos a expedita perspiciatis distinctio! Consectetur, inventore!",
-    author: "Fleur Jansen",
+    author: "Addisu",
     role: "Student",
     image: "/images/avatar-3.png",
   },

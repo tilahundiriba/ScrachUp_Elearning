@@ -60,6 +60,9 @@ const Header = () => {
               </li>
             ))}
           </ul>
+
+          {/* Buttons */}
+          <Button label="Sign up"/>
         </nav>
       </div>
     </header>

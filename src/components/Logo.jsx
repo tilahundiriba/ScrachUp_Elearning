@@ -1,16 +1,14 @@
-import { RiBookOpenLine } from "@remixicon/react"
+import { RiBookOpenLine } from "@remixicon/react";
 
 const Logo = () => {
   return (
     <div>
       <span className="">
-<RiBookOpenLine/>
+        <RiBookOpenLine />
       </span>
-      <span>
-        Scratch Up
-      </span>
+      <span>Scratch Up</span>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;
