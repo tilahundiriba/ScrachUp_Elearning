@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "./Logo";
 import { RiArrowDownSLine, RiMenuLine } from "@remixicon/react";
 import { navItems } from "../data/data";
@@ -6,6 +6,7 @@ import Search from "./Search";
 import Button from "./Button";
 
 const Header = () => {
+  const [isOpen,setIsOpen] = useState(false);
   return (
     <header className="sticky top-0 left-0 w-full bg-white py-4 border-b border-neutral-200 z-50">
       <div className="px-4 sm:px-8 flex items-center justify-between flex-wrap">
