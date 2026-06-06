@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
-import { RiArrowDownSLine, RiMenuLine } from "@remixicon/react";
+import { RiArrowDownSLine, RiCloseLine, RiMenuLine } from "@remixicon/react";
 import { navItems } from "../data/data";
 import Search from "./Search";
 import Button from "./Button";
@@ -17,12 +17,15 @@ const Header = () => {
           <button
             className="p-3 shadow-util rounded-full font-medium 
           transition-colors hove:bg-neutral-100 focus:bg-neutral-100"
-          >
-            <RiMenuLine />
+           onClick={()=>setIsOpen(!isOpen)}>
+            {isOpen? <RiCloseLine/> : <RiMenuLine/> } 
+            
           </button>
           {/* list */}
           <ul
-            className={`absolute top-full right-0 mt-3 shadow-util bg-white rounded-lg min-w-[200px] w-full transition opacity-0 invisible`}
+            className={`absolute top-full right-0 mt-3 shadow-util 
+              bg-white rounded-lg min-w-[200px] w-full 
+              transition opacity-0 invisible ${isOpen ? "opacity-100 visible":""}`}
           >
             {navItems.map((item) => (
               <li key={item.id} className="relative group">
@@ -32,7 +35,8 @@ const Header = () => {
                 >
                   {item.label}
                 </a>
-                {item.hasDropdown && <RiArrowDownSLine />}
+                {item.hasDropdown && <RiArrowDownSLine className="group-hover:rotate-180 
+                    group-focus:rotate-180 transition-transform"/>}
                 {item.hasDropdown && (
                   <ul
                     className="absolute top-full bg-white right-0 mt-1 border border-neutral-200 shadow-util rounded-lg min-w-[200px] z-50 opacity-0 invisible group-hover:opacity-100
