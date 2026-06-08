@@ -46,14 +46,18 @@ export const navItems = [
 ];
 
 export const brandBannerImgs = [
-  "/images/logo-1.svg",
-  "/images/logo-2.svg",
-  "/images/logo-3.svg",
-  "/images/logo-4.svg",
-  "/images/logo-5.svg",
-  "/images/logo-6.svg",
-  "/images/logo-7.svg",
-  "/images/logo-8.svg",
+  "/images/logo-1.png",
+  "/images/logo-2.png",
+  "/images/logo-3.png",
+  "/images/logo-4.png",
+  "/images/logo-5.png",
+  "/images/logo-6.png",
+  "/images/logo-7.png",
+  "/images/logo-8.png",
+   "/images/airtable.png",
+  "/images/dropbox.png",
+  "/images/grammary22.png",
+  "/images/shopify.png",
 ];
 
 export const categoriesItems = [
