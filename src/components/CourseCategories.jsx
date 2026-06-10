@@ -9,7 +9,7 @@ const CourseCategories = () => {
           Explore 4000+ Free <br /> Online Courses
         </h2>
         {/* wrapper */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-11">
           {categoriesItems.map((item) => (
             // Card
             <div className="p-6 boder border-neutral-200
