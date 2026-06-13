@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { courses } from "../data/data";
 import { RiStarFill } from "@remixicon/react";
 import Button from "./Button"
 
 const Course = () => {
+  const[activeTab , setActiveTab] = useState("All")
+  const filteredCourses = courses.filter((course) =>{
+    if(activeTab === "All") return true;
+    return course.category === activeTab;
+  })
   return (
     <section className="py-20 bg-gray-50">
       <div className="container">
@@ -20,18 +25,22 @@ const Course = () => {
         <div className="mt-7">
           {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-4">
-            {["All", "Popular", "Recent", "Design", "Markating", "Coding"].map(
+            {["All", "Popular", "Recent", "Design", "Marketing", "Coding"].map(
               (tab) => (
-                <button className={`shadow-util px-6 py-2.5
-                 rounded-full font-medium hover:bg-neutral-100 focus:bg-neutral-100! transition`} key={tab}>
-                  {tab}
+                <button onClick={() => setActiveTab(tab)}
+                 className={`shadow-util px-6 py-2.5
+                 rounded-full font-medium hover:bg-neutral-100 
+                 focus:bg-neutral-100! transition 
+                 ${ activeTab === tab ? "bg-lime-300 hover:bg-lime-300 focus:bg-lime-300!" 
+                 : "hover:bg-neutral-100 focus:bg-neutral-100!"}`} key={tab}>
+                  {tab} 
                 </button>
               ),
             )}
           </div>
           {/* Card Wrapper */}
-          <div className="">
-            {courses.map((course) => (
+          <div className="mt-10 sm:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredCourses.map((course) => (
               //Card
               <div className="bg-white rounded-xl border border-neutral-200 
               overflow-hidden hover:shadow-[3px_3p_-0px_0px_rgba(0,0,0,1)]
@@ -43,7 +52,7 @@ const Course = () => {
                     alt={course.title}
                     width={course.width}
                     height={course.height}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-cover"
                   />
                   {course.isNew === true && (
                     <div className="absolute top-4 right-4 bg-yellow-300 p-1.5 transform rotate-3 shadow-sm">
