@@ -3,10 +3,10 @@ import { testimonials } from "../data/data";
 import { RiDoubleQuotesR } from "@remixicon/react";
 const Testmonials = () => {
   return (
-    <section>
-      <div className="container">
+    <section className="py-20"> 
+      <div className="container ">
         {/* Title */}
-        <div className="">
+        <div className="space-y-1.5">
           <h2 className="section-title">What Learners are saying</h2>
           <p className="text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
@@ -15,23 +15,29 @@ const Testmonials = () => {
           </p>
         </div>
         {/* Card Wrapper */}
-        <div className="">
+        <div className="mt-12   grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             //Card
-            <div className="" key={testimonial.id}>
+            <div className="bg-white border border-neutral-200 shadow-sm p-8 rounded-xl space-y-3.5 lg:nth-[2]:rotate-2" key={testimonial.id}>
               {/* icon */}
-              <span className="">
+              <span className="size-8 bg-yellow-400 inline-flex items-center justify-center rounded-xl">
                 <RiDoubleQuotesR />
               </span>
               <p className="text">{testimonial.text}</p>
 
-              <div className="">
+              <div className="flex items-center gap-3">
                 {/* Avatar */}
-                <div className="">
+                <div className="size-10">
 
                     <img src={testimonial.image}
                      alt={testimonial.author} 
-                     width={150} height={150}/>
+                     width={150} height={150}
+                     className="rounded-full w-full h-full object-cover"/>
+                </div>
+                {/* author */}
+                <div >
+                  <p className="text-bold">{testimonial.author}</p>
+                  <p className="text truncate text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>

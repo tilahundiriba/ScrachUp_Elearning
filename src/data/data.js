@@ -238,21 +238,21 @@ export const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, error culpa eos a expedita perspiciatis distinctio! Consectetur, inventore!",
     author: "Alex",
     role: "Student",
-    image: "/images/avatar-1.png",
+    image: "/images/malu.jpg",
   },
   {
     id: 2,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, error culpa eos a expedita perspiciatis distinctio! Consectetur, inventore!",
     author: "Tibebu",
     role: "Student",
-    image: "/images/avatar-2.png",
+    image: "/images/mule.jpg",
   },
   {
     id: 3,
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, error culpa eos a expedita perspiciatis distinctio! Consectetur, inventore!",
     author: "Addisu",
     role: "Student",
-    image: "/images/avatar-3.png",
+    image: "/images/tile.jpg",
   },
 ];
 
