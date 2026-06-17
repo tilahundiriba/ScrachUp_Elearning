@@ -1,5 +1,6 @@
 
 import { footerLinks } from "../data/data"
+import Logo from "./Logo";
 import {
   RiFacebookFill,
   RiTwitterFill,
@@ -9,37 +10,41 @@ import {
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container">
+    <footer className="bg-neutral-900 text-white pt-16 pb-9">
+      <div className="container space-y-14 sm:space-y-20 lg:space-y-24">
         {/* Footer top */}
-        <div>
+        <div className="grid gap-5 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_0.7fr_0.8fr_0.8fr]"> {
+         
+        }
           {/* Footer Logo */}
-          <div className="">
-            {/* <Logo/> */}
-            <p className="">
-              {" "}
+          <div className="space-y-4">
+             <Logo />
+            <p className="text-neutral-400">
+             
               Empowering learners worldwide with quality educatio and skills.
             </p>
             {/* Social \Links */}
-            <div className="">
+            <div className="flex item-center gap-4">
               {[
                 <RiFacebookFill />,
                 <RiTwitterFill />,
                 <RiInstagramFill />,
                 <RiLinkedinFill />,
               ].map((Icon) => (
-                <a href="#">{Icon}</a>
+                <a href="#" className="bg-neutral-800 p-2 rounded-full 
+                hover:bg-lime-600 focus:bg-lime-600
+                 transition-colors">{Icon}</a>
               ))}
             </div>
           </div>
           {/* List */}
           { footerLinks.map((item) => (
-            <div className="" key={item.id}>
-              <p className="">{item.title}</p>
-              <ul className="">
+            <div className="space-y-3" key={item.id}>
+              <p className="font-bold text-lg">{item.title}</p>
+              <ul className="space-y-2">
                 {item.links.map((link) => (
-                  <li className="" key={link}>
-                    <a href="#" className="">
+                  <li key={link}>
+                    <a href="#" className="text-neutral-400 hover:text-lime-600 focus:text-lime-600 transition-colors">
                       {link}
                     </a>
                   </li>
@@ -49,12 +54,14 @@ const Footer = () => {
           ))}
         </div>
         {/* Footer Bottom */}
-        <div className="">
-          <p className="">&copy; {new Date().getUTCFullYear()}ScratchUp.all rights reseved.</p>
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
+          <p className="text-neutral-400">&copy; {new Date().getFullYear()} ScratchUp.all rights reseved.</p>
         {/* Links */}
-        <div className="">
+        <div className="flex gap-5 flex-wrap">
           {["Privacy Policy", "Terms & Conditions", "Cookie Policy"].map((label)=>(
-            <a  href="#">{label}</a>
+            <a  href="#" key={label} className="text-neutral-400
+             hover:text-lime-600 focus:text-lime-600
+             transition-colors">{label}</a>
           ))}
         </div>
         </div>
