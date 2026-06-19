@@ -1,15 +1,20 @@
 import React from "react";
 import { categoriesItems } from "../data/data";
-
+import { motion } from "motion/react"
+import * as variants from "../motion/animation"
 const CourseCategories = () => {
   return (
     <section className="py-20">
-      <div className="container ">
-        <h2 className="section-title text-center">
+      <motion.div variants={variants.staggerContainer}
+             initial="hidden" 
+             whileInView={"show"} 
+             viewport={{once:true}} className="container ">
+        <motion.h2 variants={variants.fadeInUp} className="section-title text-center">
           Explore 4000+ Free <br /> Online Courses
-        </h2>
+        </motion.h2>
         {/* wrapper */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-11">
+        <motion.div variants={variants.fadeInUp}
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-11">
           {categoriesItems.map((item) => (
             // Card
             <div className="p-6 boder border-neutral-200
@@ -25,8 +30,8 @@ const CourseCategories = () => {
               <p className="text">{item.desc}</p>
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

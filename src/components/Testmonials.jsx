@@ -1,21 +1,26 @@
 import React from "react";
 import { testimonials } from "../data/data";
 import { RiDoubleQuotesR } from "@remixicon/react";
+import { motion } from "motion/react"
+import * as variants from "../motion/animation"
 const Testmonials = () => {
   return (
     <section className="py-20"> 
-      <div className="container ">
+      <motion.div variants={variants.staggerContainer}
+                   initial="hidden" 
+                   whileInView={"show"} 
+                   viewport={{once:true}} className="container ">
         {/* Title */}
         <div className="space-y-1.5">
-          <h2 className="section-title">What Learners are saying</h2>
-          <p className="text">
+          <motion.h2 variants={variants.fadeInUp} className="section-title">What Learners are saying</motion.h2>
+          <motion.p variants={variants.fadeInUp}  className="text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
             nulla ea repellendus corrupti consequuntur, qui dignissimos, dolorem
             hic, sint quia rerum culpa fugiat magnam necessitatibus{" "}
-          </p>
+          </motion.p>
         </div>
         {/* Card Wrapper */}
-        <div className="mt-12   grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div variants={variants.fadeIn}  className="mt-12   grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             //Card
             <div className="bg-white border border-neutral-200 shadow-sm p-8 rounded-xl space-y-3.5 lg:nth-[2]:rotate-2" key={testimonial.id}>
@@ -42,8 +47,8 @@ const Testmonials = () => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

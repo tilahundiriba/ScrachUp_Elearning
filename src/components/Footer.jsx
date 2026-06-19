@@ -1,6 +1,7 @@
-
-import { footerLinks } from "../data/data"
+import { footerLinks } from "../data/data";
 import Logo from "./Logo";
+import { motion } from "motion/react";
+import * as variants from "../motion/animation";
 import {
   RiFacebookFill,
   RiTwitterFill,
@@ -11,18 +12,23 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-neutral-900 text-white pt-16 pb-9">
-      <div className="container space-y-14 sm:space-y-20 lg:space-y-24">
+      <motion.div
+        variants={variants.staggerContainer}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true }}
+        className="container space-y-14 sm:space-y-20 lg:space-y-24"
+      >
         {/* Footer top */}
-        <div className="grid gap-5 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_0.7fr_0.8fr_0.8fr]"> {
-         
-        }
+        <div className="grid gap-5 lg:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_0.7fr_0.8fr_0.8fr]">
+          {" "}
+          {}
           {/* Footer Logo */}
-          <div className="space-y-4">
-             <Logo />
-            <p className="text-neutral-400">
-             
+          <motion.div variants={variants.fadeInUp} className="space-y-4">
+            <Logo />
+            <motion.p variants={variants.fadeInUp} className="text-neutral-400">
               Empowering learners worldwide with quality educatio and skills.
-            </p>
+            </motion.p>
             {/* Social \Links */}
             <div className="flex item-center gap-4">
               {[
@@ -31,41 +37,59 @@ const Footer = () => {
                 <RiInstagramFill />,
                 <RiLinkedinFill />,
               ].map((Icon) => (
-                <a href="#" className="bg-neutral-800 p-2 rounded-full 
+                <a
+                  href="#"
+                  className="bg-neutral-800 p-2 rounded-full 
                 hover:bg-lime-600 focus:bg-lime-600
-                 transition-colors">{Icon}</a>
+                 transition-colors"
+                >
+                  {Icon}
+                </a>
               ))}
             </div>
-          </div>
+          </motion.div>
           {/* List */}
-          { footerLinks.map((item) => (
-            <div className="space-y-3" key={item.id}>
+          {footerLinks.map((item) => (
+            <motion.div variants={variants.fadeInUp} className="space-y-3" key={item.id}>
               <p className="font-bold text-lg">{item.title}</p>
               <ul className="space-y-2">
                 {item.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-neutral-400 hover:text-lime-600 focus:text-lime-600 transition-colors">
+                    <a
+                      href="#"
+                      className="text-neutral-400 hover:text-lime-600 focus:text-lime-600 transition-colors"
+                    >
                       {link}
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
         {/* Footer Bottom */}
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
-          <p className="text-neutral-400">&copy; {new Date().getFullYear()} ScratchUp.all rights reseved.</p>
-        {/* Links */}
-        <div className="flex gap-5 flex-wrap">
-          {["Privacy Policy", "Terms & Conditions", "Cookie Policy"].map((label)=>(
-            <a  href="#" key={label} className="text-neutral-400
+          <motion.p variants={variants.fadeIn} className="text-neutral-400">
+            &copy; {new Date().getFullYear()} ScratchUp.all rights reseved.
+          </motion.p>
+          {/* Links */}
+          <motion.div variants={variants.fadeIn} className="flex gap-5 flex-wrap">
+            {["Privacy Policy", "Terms & Conditions", "Cookie Policy"].map(
+              (label) => (
+                <a
+                  href="#"
+                  key={label}
+                  className="text-neutral-400
              hover:text-lime-600 focus:text-lime-600
-             transition-colors">{label}</a>
-          ))}
+             transition-colors"
+                >
+                  {label}
+                </a>
+              ),
+            )}
+          </motion.div>
         </div>
-        </div>
-      </div>
+      </motion.div>
     </footer>
   );
 };

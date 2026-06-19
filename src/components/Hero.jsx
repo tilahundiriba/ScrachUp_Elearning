@@ -2,40 +2,45 @@ import { RiStarFill } from "@remixicon/react";
 import React from "react";
 import Button from "./Button";
 import { Book,Star,BookOpen ,GraduationCap} from "lucide-react"
+import { motion } from "motion/react"
+import * as variants from "../motion/animation"
 const Hero = () => {
   return (
     <section className="pt-12 lg:pt-18 pb-20">
-      <div className="container grid gap-14 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <motion.div variants={variants.staggerContainer}
+       initial="hidden" 
+       whileInView={"show"} 
+       viewport={{once:true}} className="container grid gap-14 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         {/* Content  */}
         <div className="space-y-2.5 sm:text-center lg:text-left">
           {/* badge */}
-          <div className="bg-yellow-400 px-3 inline-flex items-center gap-1 py-1 -rotate-2 transform">
+          <motion.div variants={variants.fadeInUp} className="bg-yellow-400 px-3 inline-flex items-center gap-1 py-1 -rotate-2 transform">
             {/* Stars */}
 
-            <div className="flex items-center gap-0.5">
+            <div  className="flex items-center gap-0.5">
               {[1, 2, 3, 4, 5].map((i) => (
                 <RiStarFill key={i} />
               ))}
             </div>
             <p className="text-xs font-bold tracking-wider">"A JOY TO USE"</p>
-          </div>
-          <h1 className="text-4xl font-semibold leading-[1.1] md:text-5xl lg:text-6xl">
+          </motion.div>
+          <motion.h1 variants={variants.fadeInUp}  className="text-4xl font-semibold leading-[1.1] md:text-5xl lg:text-6xl">
             {" "}
             Professional and Lifelong learning comes here.
-          </h1>
-          <p className="max-w-lg text-neutral-600 sm:mx-auto lg:mx-0">
+          </motion.h1>
+          <motion.p variants={variants.fadeInUp} className="max-w-lg text-neutral-600 sm:mx-auto lg:mx-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus a
             excepturi dolorum sunt fugit modi ducimus aut tempore optio nostrum
             quo blanditiis laudantium animi voluptas
-          </p>
+          </motion.p>
           {/* Buttons */}
-          <div className="mt-7 grid gap-4 sm:flex sm:justify-center lg:justify-start">
+          <motion.div variants={variants.fadeInUp} className="mt-7 grid gap-4 sm:flex sm:justify-center lg:justify-start">
             <Button label={"Get Started"} primary />
             <Button label={"Explore Courses"} />
-          </div>
+          </motion.div>
         </div>
         {/* Image */}
-        <div className="relative mx-auto p-5">
+        <motion.div variants={variants.fadeIn} className="relative mx-auto p-5">
           <div
             className="max-w-[370px] w-full shadow-img mx-auto 
           rounded-t-full bg-lime-600 
@@ -94,8 +99,8 @@ const Hero = () => {
             </p>
           </div>
         
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
